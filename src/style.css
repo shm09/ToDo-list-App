@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #333;
+}
+.form-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.form-content,
+.tasks-list {
+    padding: 25px 10px;
+    width: 80%;
+    margin: auto;
+    background-color: #eee;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+input.form-control,
+.submit-btn,
+.delete-btn {
+    height: calc(60px - 20px);
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+input.form-control {
+    width: 70%;
+}
+.submit-btn,
+.delete-btn {
+    cursor: pointer;
+    color: #f1f1f1;
+    transform: scale(1.05);
+    transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    letter-spacing: 0.5px;
+}
+.submit-btn {
+    background-color: #3ce636;
+}
+.delete-btn {
+    background-color: #e63c36;
+}
+.submit-btn:hover,
+.delete-btn:hover {
+    transform: scale(0.98);
+}
+.tasks-list {
+    height: 60vh;
+    border-radius: 6px;
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.tasks-list .task {
+    font-size: 19px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 6px;
+    width: 100%;
+    border-bottom: 5px solid rgba(51, 51, 51, 0.295);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+    transition: opacity 0.5s cubic-bezier(0.18, 0.6, 0.35, 0.29);
+}
+.tasks-list .task.done {
+    opacity: 0.5;
+}
+.tasks-list .task:not(:last-of-type) {
+    margin-bottom: 15px;
+}
+
+.tasks-container {
+    width: 95%;
+    height: 100%;
+    margin: auto;
+    padding: 10px 0;
+    border-radius: 21px;
+    overflow-y: auto;
+}
+
+.tasks-container::-webkit-scrollbar {
+    width: 5px;
+}
+.tasks-container::-webkit-scrollbar-thumb {
+    background-color: rgb(170, 162, 162);
+    border-radius: 6px;
+}
+.tasks-container p {
+    pointer-events: none;
+}
